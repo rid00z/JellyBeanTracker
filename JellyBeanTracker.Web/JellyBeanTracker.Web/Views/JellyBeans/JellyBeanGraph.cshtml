@@ -1,0 +1,24 @@
+﻿@inherits System.Web.Mvc.WebViewPage<JellyBeanTracker.Shared.DisplayModels.ProfitReportModel>
+
+@{
+    ViewBag.Title = "Jelly Bean Graph";
+}
+
+@if (JellyBeanTracker.Web.Globals.Native) {
+    @Html.Partial("JellyBeanTracker.Mobile.External.Web.Views.Shared.Header, JellyBeanTracker.Mobile", null);
+}
+
+
+
+<h2>Jelly Bean Price Graph</h2>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+@if(JellyBeanTracker.Web.Globals.Native) {
+	<input type="button" id="editVisible" title="Edit Visible" value="Edit Visible" />
+	<input type="button" id="getGraphData" title="Native Func" value="Native Func" />
+}
+
+@if (JellyBeanTracker.Web.Globals.Native) {
+    @Html.Partial("JellyBeanTracker.Mobile.External.Web.Views.Shared.Footer, JellyBeanTracker.Mobile", null);
+}

@@ -1,0 +1,55 @@
+﻿@inherits System.Web.Mvc.WebViewPage<JellyBeanTracker.Shared.DisplayModels.ProfitReportModel>
+
+@{
+    ViewBag.Title = "ProfitReport";
+}
+
+@if (JellyBeanTracker.Web.Globals.Native) {
+    @Html.Partial("JellyBeanTracker.Mobile.External.Web.Views.Shared.Header, JellyBeanTracker.Mobile", null);
+}
+
+<h2>Profit Report</h2>
+
+<h3>Welcome to your beautiful profit report.</h3>
+
+
+<h4>You invested a total of <strong>$@Model.TotalInvested</strong> and after losses of <strong>$@Model.Loses</strong> and gains 
+    of <strong>$@Model.Gains</strong> your total jellybean worth is <strong>$@Model.TotalOutcome</strong>.
+</h4>
+@{
+    var maxTotals = Math.Max(Model.TotalInvested, Model.TotalOutcome);
+    var maxGains = Math.Max(Model.Loses, Model.Gains);
+
+    var percentIn = ((int)(Model.TotalInvested / maxTotals * 100));
+    var percentOu = ((int)(Model.TotalOutcome / maxTotals * 100));
+    
+    var percentLo = ((int)(Model.Loses / maxGains * 100));
+    var percentGa = ((int)(Model.Gains / maxGains * 100));    
+}
+<h2>Totals</h2>
+<h5>Invested <strong>$@Model.TotalInvested</strong></h5>
+<div class="barContainer">
+    <div class="overallBar" style="width: @percentIn%;"></div>
+</div>
+
+<h5>Outcome <strong>$@Model.TotalOutcome</strong></h5>
+<div class="barContainer">
+    <div class="overallBar green" style="width: @percentOu%;"></div>
+</div>
+
+<h2>Performance</h2>
+<h5>Gains <strong>$@Model.Gains</strong></h5>
+<div class="barContainer">
+    <div class="overallBar green" style="width: @percentGa%;"></div>
+</div>
+
+<h5>Losses <strong>$@Model.Loses</strong></h5>
+<div class="barContainer">
+    <div class="overallBar red" style="width: @percentLo%;"></div>
+</div>
+
+
+@if (JellyBeanTracker.Web.Globals.Native) {
+    @Html.Partial("JellyBeanTracker.Mobile.External.Web.Views.Shared.Footer, JellyBeanTracker.Mobile", null);
+}
+

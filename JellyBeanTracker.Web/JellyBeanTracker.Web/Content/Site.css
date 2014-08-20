@@ -1,0 +1,67 @@
+﻿h1, h2, h3, h4, h5 {
+    color: #0E68C4;
+} 
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.bar
+{
+    position: absolute;    
+    bottom: 0;
+    width: 100%;
+    background: #b4e391; /* Old browsers */
+    background: -moz-linear-gradient(left,  #b4e391 0%, #63d11b 50%, #b4e391 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#b4e391), color-stop(50%,#63d11b), color-stop(100%,#b4e391)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #b4e391 0%,#63d11b 50%,#b4e391 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #b4e391 0%,#63d11b 50%,#b4e391 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #b4e391 0%,#63d11b 50%,#b4e391 100%); /* IE10+ */
+    background: linear-gradient(left,  #b4e391 0%,#63d11b 50%,#b4e391 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=1 ); /* IE6-9 */
+}
+
+.barContainer 
+{
+    -webkit-border-radius: 5px;         
+    background-color: lightgray;
+    width: 100%;
+    height: 60px;
+}
+.overallBar
+{
+    height: 60px;
+    -webkit-border-radius: 5px;         
+    position: relative;
+    border: 1px solid lightgray;    
+    background: -webkit-linear-gradient(top, rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* Chrome10+,Safari5.1+ */
+}
+
+.overallBar.red
+{
+    background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* Chrome10+,Safari5.1+ */
+}
+
+.overallBar.orange
+{
+    background: -webkit-linear-gradient(top, #ffc578 0%,#fb9d23 100%); /* Chrome10+,Safari5.1+ */
+}
+
+.overallBar.green
+{
+    background: -webkit-linear-gradient(top, #b4e391 0%,#61c419 50%,#b4e391 100%); /* Chrome10+,Safari5.1+ */
+}
