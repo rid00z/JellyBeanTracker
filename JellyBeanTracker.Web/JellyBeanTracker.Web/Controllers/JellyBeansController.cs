@@ -138,5 +138,13 @@ namespace JellyBeanTracker.Web.Controllers
             }
             base.Dispose(disposing);
         }
+
+		public ActionResult GetAllData()
+		{
+			return Json (new SyncContainer {
+				JellyBeanValues = db.JellyBeanValues.ToList(),
+				MyJellyBeans = db.MyJellyBeans.ToList()
+			}, JsonRequestBehavior.AllowGet);
+		}
     }
 }
